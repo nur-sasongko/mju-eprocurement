@@ -1,6 +1,7 @@
 import { supabase } from "@/lib/supabase/client";
 import { AuthReturn } from "../types";
 import PATHS from "@/shared/utils/routes";
+import { RegisterFormData } from "../schemas/register";
 
 export class AuthService {
   static async login(email: string, password: string): Promise<AuthReturn> {
@@ -71,6 +72,39 @@ export class AuthService {
       }
 
       throw new Error(`Gagal mengatur ulang password: ${error.message}`);
+    }
+  }
+
+  static async register(data: RegisterFormData): Promise<void> {
+    // 1. Daftarkan user ke auth Supabase (email, password)
+    const { error: signUpError, data: signUpData } = await supabase.auth.signUp(
+      {
+        email: data.email,
+        password: data.password,
+      }
+    );
+
+    if (signUpError) {
+      if (signUpError.message.includes("User already registered")) {
+        throw new Error("Email sudah terdaftar.");
+      }
+      throw new Error(`Gagal registrasi: ${signUpError.message}`);
+    }
+
+    // 2. Tambahkan data user ke table users (gunakan RPC atau insert langsung)
+    // Customize this according to your user table structure
+    const { error: userError } = await supabase.from("users").insert([
+      {
+        email: data.email,
+        npwp: data.npwp,
+        auth_id: signUpData.user?.id,
+        is_active: true,
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString(),
+      },
+    ]);
+    if (userError) {
+      throw new Error(`Gagal menyimpan data user: ${userError.message}`);
     }
   }
 }

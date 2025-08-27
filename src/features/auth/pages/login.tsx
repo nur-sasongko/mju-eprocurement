@@ -5,6 +5,8 @@ import { useLogin } from "../hooks/use-login";
 import { FormInput } from "@/shared/components/forms/form-input";
 import { useState } from "react";
 import { ArrowRightIcon, EyeIcon, EyeOffIcon } from "lucide-react";
+import PATHS from "@/shared/utils/routes";
+import Link from "next/link";
 
 export default function LoginPage() {
   const { onSubmit, form, loading } = useLogin();
@@ -77,6 +79,9 @@ export default function LoginPage() {
         </div>
 
         <div className="text-center">
+          <Link
+            href={PATHS.PUBLIC.REGISTER}
+          >
           <Button
             type="button"
             variant="link"
@@ -87,6 +92,7 @@ export default function LoginPage() {
             </span>
             <ArrowRightIcon className="h-3 w-3 text-[#0886D9]" />
           </Button>
+          </Link>
         </div>
       </form>
     </div>
