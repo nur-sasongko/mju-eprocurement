@@ -7,7 +7,7 @@ import { changePasswordDefaultValues, ChangePasswordFormData, changePasswordSche
 import PATHS from "@/shared/utils/routes";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { AuthService } from "../services/auth";
-import { QUERIES } from "@/shared/utils/constants";
+import { QUERIES } from "@/shared/utils/queries";
 
 
 export const useChangePassword = () => {

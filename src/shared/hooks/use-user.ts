@@ -5,7 +5,7 @@ import { supabase } from "@/lib/supabase/client";
 import useUserStore from "@/shared/stores/user";
 import { useEffect } from "react";
 import { useSonner } from "./use-sonner";
-import { QUERIES } from "@/shared/utils/constants";
+import { QUERIES } from "@/shared/utils/queries";
 import { UserService } from "@/features/users/services/user";
 
 const useUser = () => {

@@ -10,7 +10,7 @@ import {
 import useUserStore from "@/shared/stores/user";
 import { supabase } from "@/lib/supabase/client";
 import { useSonner } from "@/shared/hooks/use-sonner";
-import { QUERIES } from "@/shared/utils/constants";
+import { QUERIES } from "@/shared/utils/queries";
 
 export function useUserProfile() {
   const queryClient = useQueryClient();
