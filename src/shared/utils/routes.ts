@@ -31,6 +31,7 @@ const PATHS = {
     // Authentication routes
     AUTH: "/auth",
     LOGIN: "/auth/login",
+    REGISTER: "/auth/register",
     FORGOT_PASSWORD: "/auth/forgot-password",
     CHANGE_PASSWORD: "/auth/change-password",
   },
