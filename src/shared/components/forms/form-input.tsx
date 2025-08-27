@@ -97,12 +97,12 @@ export function FormInput<
           id={name}
           type={type}
           placeholder={placeholder}
-          disabled={disabled}
           onInput={type === "number" || type === "tel" ? handleNumericInput : undefined}
           className={cn(
             error && "border-red-500 focus:ring-red-300 focus:border-red-500",
             hasLeftIcon && "pl-10",
             hasRightIcon && "pr-10",
+            disabled && "opacity-50 cursor-not-allowed",
             inputClassName,
             className
           )}
