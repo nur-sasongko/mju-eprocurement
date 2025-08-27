@@ -1,6 +1,5 @@
 "use client";
 
-import { OnboardingModal } from '@/features/onboarding/components/onboarding-modal';
 import useUser from '@/shared/hooks/use-user';
 import React from 'react';
 
@@ -20,9 +19,7 @@ const UserProvider = ({
   }
 
   if (!user?.id || user?.is_password_set === false) {
-    return (
-      <OnboardingModal />
-    );
+    return null;
   }
 
   return <>{children}</>;
