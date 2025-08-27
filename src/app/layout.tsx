@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Figtree } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import MainProvider from "@/shared/providers";
 
-const figtree = Figtree({
-  variable: "--font-figtree",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Unit Pengelola Zakat (UPZ) KPAD",
-  description: "Aplikasi untuk memudahkan pengelolaan zakat di KPAD RW 02 Bandung",
+  title: "Migas Utama Jabar - E-Procurement",
+  description: "Aplikasi untuk memudahkan pengadaan barang dan jasa",
 };
 
 export default function RootLayout({
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${figtree.variable} antialiased`}
+        className={`${jakarta.className} antialiased`}
       >
         <MainProvider>
           {children}
