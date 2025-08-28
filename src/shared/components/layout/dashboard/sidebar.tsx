@@ -91,8 +91,8 @@ export function AppSidebar() {
   return (
     <Sidebar collapsible="offcanvas" variant="inset">
       <SidebarHeader className="pt-5 px-4 flex items-center gap-3">
-        <BrandingIcon size={32} className="rounded-md" />
-        <p className="font-bold text-sidebar-foreground">Unit Pengelola Zakat KPAD</p>
+        <BrandingIcon className="rounded-md" />
+        <p className="font-bold text-sidebar-foreground">Migas Utama Jabar</p>
       </SidebarHeader>
       <SidebarContent className="overflow-x-hidden">
         <SidebarGroup>
