@@ -1,18 +1,13 @@
 import { APP_BRANDING } from "@/shared/utils/branding";
 import { Phone, Mail, Clock, MapPin } from "lucide-react";
-import Image from "next/image";
+import BrandingIcon from "./branding-icon";
 
 export function CompanyInfo() {
   return (
     <div className="space-y-8 flex flex-col">
       {/* Logo and Company Name */}
       <div className="space-y-4">
-        <Image
-          src={"/static/logo/muj.png"}
-          alt="Logo MUJ"
-          width={88}
-          height={40}
-        />
+        <BrandingIcon />
 
         <div className="space-y-2">
           <h1 className="text-3xl font-bold text-gray-900">E-Procurement</h1>

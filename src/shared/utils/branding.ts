@@ -12,4 +12,10 @@ export const APP_BRANDING = {
       address: "Wijaya Graha Puri, Blok H-33, Lantai 2, Jl. Wijaya II, RT.6/RW.1, Pulo, Kebayoran Baru, Jakarta, DKI Jakarta 12160",
     },
   },
+  social_medias: {
+    instagram: "https://www.instagram.com/migasutamajabar/",
+    linkedin: "https://id.linkedin.com/company/pt-migas-utama-jabar",
+    facebook: "https://www.facebook.com/migasutamajabar",
+    youtube: "https://www.youtube.com/channel/UCGHSdcTYFjSbaCK5OAddj9Q",
+  }
 };
